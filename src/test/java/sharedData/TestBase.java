@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class TestBase {
 
-    public WebDriver driver;
+    private WebDriver driver;
 
     @BeforeEach
     public void setUp() {
@@ -28,5 +28,9 @@ public class TestBase {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }

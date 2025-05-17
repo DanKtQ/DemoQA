@@ -22,18 +22,18 @@ public class WebTableTest extends TestBase {
     @Test
     public void browserWebTableTests() {
 
-        elementsMethods = new ElementsMethods(driver);
-        javascriptMethods = new JavascriptMethods(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+        elementsMethods = new ElementsMethods(getDriver());
+        javascriptMethods = new JavascriptMethods(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Elements");
         commonPage.goToDesiredSubMenu("Web Tables");
 
-        List<WebElement> tableElements = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
+        List<WebElement> tableElements = getDriver().findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
         int actualTableSize = tableElements.size();
 
-        WebElement addNewRecordButton = driver.findElement((By.id("addNewRecordButton")));
+        WebElement addNewRecordButton = getDriver().findElement((By.id("addNewRecordButton")));
         elementsMethods.clickOnElements(addNewRecordButton);
 
         //declarare valori form
@@ -44,38 +44,38 @@ public class WebTableTest extends TestBase {
         String salaryValue = "1000";
         String departmentValue = "Engineering";
 
-        WebElement firstNameField = driver.findElement((By.id("firstName")));
+        WebElement firstNameField = getDriver().findElement((By.id("firstName")));
         elementsMethods.fillElement(firstNameField, firstNameValue);
 
-        WebElement lastNameField = driver.findElement((By.id("lastName")));
+        WebElement lastNameField = getDriver().findElement((By.id("lastName")));
         elementsMethods.fillElement(lastNameField, lastNameValue);
 
-        WebElement emailField = driver.findElement((By.id("userEmail")));
+        WebElement emailField = getDriver().findElement((By.id("userEmail")));
         elementsMethods.fillElement(emailField, emailValue);
 
-        WebElement ageField = driver.findElement((By.id("age")));
+        WebElement ageField = getDriver().findElement((By.id("age")));
         elementsMethods.fillElement(ageField, ageValue);
 
-        WebElement salaryField = driver.findElement((By.id("salary")));
+        WebElement salaryField = getDriver().findElement((By.id("salary")));
         elementsMethods.fillElement(salaryField, salaryValue);
 
-        WebElement departmentField = driver.findElement((By.id("department")));
+        WebElement departmentField = getDriver().findElement((By.id("department")));
         elementsMethods.fillElement(departmentField, departmentValue);
 
-        WebElement submitButton = driver.findElement((By.id("submit")));
+        WebElement submitButton = getDriver().findElement((By.id("submit")));
         elementsMethods.clickOnElements(submitButton);
 
-        WebElement firstNameColumn = driver.findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][1]"));
+        WebElement firstNameColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][1]"));
         assertEquals("Dan", firstNameColumn.getText());
-        WebElement lastNameColumn = driver.findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][2]"));
+        WebElement lastNameColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][2]"));
         assertEquals("Baicoianu", lastNameColumn.getText());
-        WebElement ageColumn = driver.findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][3]"));
+        WebElement ageColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][3]"));
         assertEquals("35", ageColumn.getText());
-        WebElement userEmailColumn = driver.findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][4]"));
+        WebElement userEmailColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][4]"));
         assertEquals("dan@testtest.com", userEmailColumn.getText());
-        WebElement salaryColumn = driver.findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][5]"));
+        WebElement salaryColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][5]"));
         assertEquals("1000", salaryColumn.getText());
-        WebElement departmentColumn = driver.findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][6]"));
+        WebElement departmentColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][6]"));
         assertEquals("Engineering", departmentColumn.getText());
 
 

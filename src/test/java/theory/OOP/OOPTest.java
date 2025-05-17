@@ -13,5 +13,8 @@ public class OOPTest {
         Angajat Arghezi = new Angajat("Arghezi", "Tudor", 64, "SC POET SRL", 40, 25 );
         Arghezi.infoAngajat();
 
+        Arghezi.promovare();
+
+
     }
 }

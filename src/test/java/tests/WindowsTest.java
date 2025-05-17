@@ -20,27 +20,27 @@ public class WindowsTest extends TestBase {
     @Test
     public void browserWindowsTests() {
 
-        elementsMethods = new ElementsMethods(driver);
-        javascriptMethods = new JavascriptMethods(driver);
-        windowsMethods = new WindowsMethods(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+        elementsMethods = new ElementsMethods(getDriver());
+        javascriptMethods = new JavascriptMethods(getDriver());
+        windowsMethods = new WindowsMethods(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Alerts, Frame & Windows");
         commonPage.goToDesiredSubMenu("Browser Windows");
 
-        WebElement newTabElement = driver.findElement((By.id("tabButton")));
+        WebElement newTabElement = getDriver().findElement((By.id("tabButton")));
         elementsMethods.clickOnElements(newTabElement);
         windowsMethods.switchToNewTab();
-        WebElement sampleHeadingElement = driver.findElement(By.id("sampleHeading"));
+        WebElement sampleHeadingElement = getDriver().findElement(By.id("sampleHeading"));
         windowsMethods.displayContentOfNewTab(sampleHeadingElement);
         windowsMethods.close();
 
         windowsMethods.switchToPreviousTab();
-        WebElement newWindowsElement = driver.findElement((By.id("windowButton")));
+        WebElement newWindowsElement = getDriver().findElement((By.id("windowButton")));
         elementsMethods.clickOnElements(newWindowsElement);
         windowsMethods.switchToNewWindow();
-        WebElement sampleHeadingWindowElement = driver.findElement(By.id("sampleHeading"));
+        WebElement sampleHeadingWindowElement = getDriver().findElement(By.id("sampleHeading"));
         windowsMethods.displayContentOfNewWindow(sampleHeadingWindowElement);
         windowsMethods.close();
         windowsMethods.switchToPreviousWindow();

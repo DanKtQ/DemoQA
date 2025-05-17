@@ -21,11 +21,11 @@ public class PracticeFormTest extends TestBase {
 
     @Test
     public void practiceFormTests() {
-        elementsMethods = new ElementsMethods(driver);
-        javascriptMethods = new JavascriptMethods(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
-        practiceFormPage = new PracticeFormPage(driver);
+        elementsMethods = new ElementsMethods(getDriver());
+        javascriptMethods = new JavascriptMethods(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
+        practiceFormPage = new PracticeFormPage(getDriver());
 
         homePage.goToDesiredMenu("Forms");
         commonPage.goToDesiredSubMenu("Practice Form");

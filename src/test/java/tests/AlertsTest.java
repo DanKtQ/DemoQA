@@ -19,35 +19,35 @@ public class AlertsTest extends TestBase {
     CommonPage commonPage;
 
     @Test
-    public void accessAlertsPage() {
+    public void accessAlertsTests() {
 
-        elementsMethods = new ElementsMethods(driver);
-        alertMethods = new AlertMethods(driver);
-        javascriptMethods = new JavascriptMethods(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+        elementsMethods = new ElementsMethods(getDriver());
+        alertMethods = new AlertMethods(getDriver());
+        javascriptMethods = new JavascriptMethods(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Alerts, Frame & Windows");
         commonPage.goToDesiredSubMenu("Alerts");
 
-        WebElement alertOkElement = driver.findElement(By.id("alertButton"));
+        WebElement alertOkElement = getDriver().findElement(By.id("alertButton"));
         elementsMethods.clickOnElements(alertOkElement);
         //ne mutam cu focusul pe alerta si dam ok
         alertMethods.interactOKWithAlerts();
 
-        WebElement alertDelayElement = driver.findElement(By.id("timerAlertButton"));
+        WebElement alertDelayElement = getDriver().findElement(By.id("timerAlertButton"));
         elementsMethods.clickOnElements(alertDelayElement);
         //definim un wait explicit ca sa astepte dupa alerta
         alertMethods.explicitAlertWait();
         //ne mutam cu focusul pe alerta si dam ok
         alertMethods.interactOKWithAlerts();
 
-        WebElement alertConfirmationElement = driver.findElement(By.id("confirmButton"));
+        WebElement alertConfirmationElement = getDriver().findElement(By.id("confirmButton"));
         elementsMethods.clickOnElements(alertConfirmationElement);
         //ne mutam cu focusul pe alerta si dam cancel
         alertMethods.interactDismissWithAlerts();
 
-        WebElement alertPromptElement = driver.findElement(By.id("promtButton"));
+        WebElement alertPromptElement = getDriver().findElement(By.id("promtButton"));
         elementsMethods.clickOnElements(alertPromptElement);
         //ne mutam cu focusul pe alerta, completam campul si dam OK
         alertMethods.interactAndFillWithAlert("Automation");

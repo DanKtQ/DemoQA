@@ -2,9 +2,9 @@ package theory.OOP;
 
 public class Student extends Persoana {
 
-    public String facultate;
-    public String an;
-    public Boolean bursa;
+    private String facultate;
+    private String an;
+    private Boolean bursa;
 
     public Student(String nume, String prenume, Integer varsta, String facultate, String an, Boolean bursa) {
         super(nume, prenume, varsta);
@@ -20,5 +20,27 @@ public class Student extends Persoana {
         System.out.println("Studentul ia/nu ia bursa: " + bursa);
     }
 
+    public void absolvire() {
+        System.out.println("Studentul cu numele " + getNume() + " si prenumele " + getPrenume() + " a absolvit");
+    }
 
+    public String getFacultate() {
+        return facultate;
+    }
+
+    public String getAn() {
+        return an;
+    }
+
+    public Boolean getBursa() {
+        return bursa;
+    }
+
+    public void setAn(String an) {
+        this.an = an;
+    }
+
+    public void setBursa(Boolean bursa) {
+        this.bursa = bursa;
+    }
 }

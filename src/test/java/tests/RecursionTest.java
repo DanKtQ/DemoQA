@@ -13,8 +13,8 @@ public class RecursionTest extends TestBase {
     @Test
     public void scrollThroughTheList() throws InterruptedException {
 
-        Actions actions = new Actions(driver);
-        List<WebElement> listElement = driver.findElements(By.xpath("//div[@id='demo-tabpane-list']//div[@class='list-group-item list-group-item-action']"));
+        Actions actions = new Actions(getDriver());
+        List<WebElement> listElement = getDriver().findElements(By.xpath("//div[@id='demo-tabpane-list']//div[@class='list-group-item list-group-item-action']"));
         for (int i = 0; i < listElement.size() - 1; i++) {
             WebElement currentElement = listElement.get(i);
             WebElement nextElement = listElement.get(i + 1);

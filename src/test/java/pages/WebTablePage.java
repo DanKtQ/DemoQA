@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class WebTablePage extends CommonPage{
+public class WebTablePage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']")
     private List<WebElement> tableElements;
@@ -15,17 +15,17 @@ public class WebTablePage extends CommonPage{
     @FindBy(id = "firstName")
     private WebElement firstNameElement;
     @FindBy(id = "lastName")
-    WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id = "userEmail")
-    WebElement emailElement;
+    private WebElement emailElement;
     @FindBy(id = "age")
-    WebElement ageElement;
+    private WebElement ageElement;
     @FindBy(id = "salary")
-    WebElement salaryElement;
+    private WebElement salaryElement;
     @FindBy(id = "department")
-    WebElement departmentElement;
+    private WebElement departmentElement;
     @FindBy(id = "submit")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     public WebTablePage(WebDriver driver) {
         super(driver);

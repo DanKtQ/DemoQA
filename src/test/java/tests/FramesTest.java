@@ -20,24 +20,24 @@ public class FramesTest extends TestBase {
     @Test
     public void FramesTests() {
 
-        elementsMethods = new ElementsMethods(driver);
-        javascriptMethods = new JavascriptMethods(driver);
-        framesMethods = new FramesMethods(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+        elementsMethods = new ElementsMethods(getDriver());
+        javascriptMethods = new JavascriptMethods(getDriver());
+        framesMethods = new FramesMethods(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Alerts, Frame & Windows");
         commonPage.goToDesiredSubMenu("Frames");
 
-        WebElement frame1Element = driver.findElement((By.id("frame1")));
+        WebElement frame1Element = getDriver().findElement((By.id("frame1")));
         framesMethods.switchToFrame(frame1Element);
-        WebElement sampleHeadingFrameElement = driver.findElement(By.id("sampleHeading"));
+        WebElement sampleHeadingFrameElement = getDriver().findElement(By.id("sampleHeading"));
         framesMethods.displayContentOfFrame(sampleHeadingFrameElement);
 
         //ne ducem cu focusul inapoi pe pagina principala
         framesMethods.switchToMainContent();
         //ne ducem cu focusul pe frame-ul 2
-        WebElement frame2Element = driver.findElement((By.id("frame2")));
+        WebElement frame2Element = getDriver().findElement((By.id("frame2")));
         framesMethods.switchToFrame(frame2Element);
         //facem un scroll atat pe axa x, cat si pe axa y
         javascriptMethods.scroll(200, 200);

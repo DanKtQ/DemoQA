@@ -17,7 +17,7 @@ public class HomePage {
 
     // Identificam webElementele specifice pentru aceasta pagina
     @FindBy(xpath = "//h5")
-    List<WebElement> alertFrameWindowElement;
+    private List<WebElement> alertFrameWindowElement;
 
 //    @FindBy(xpath = "//p[text()='Consent']")
 //    WebElement consentElement;
