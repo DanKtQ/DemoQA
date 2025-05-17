@@ -2,20 +2,18 @@ package tests;
 
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
-import pages.CommonPage;
-import pages.HomePage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.CommonPage;
+import pages.HomePage;
+import sharedData.TestBase;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WebTableTest {
-    WebDriver driver;
+public class WebTableTest extends TestBase {
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
     HomePage homePage;
@@ -23,12 +21,6 @@ public class WebTableTest {
 
     @Test
     public void browserWebTableTests() {
-        //deschidem un browser de Chrome
-        driver = new ChromeDriver();
-        //accesam o pagina web
-        driver.get("https://demoqa.com/");
-        //setam browserul in modul maximize
-        driver.manage().window().maximize();
 
         elementsMethods = new ElementsMethods(driver);
         javascriptMethods = new JavascriptMethods(driver);

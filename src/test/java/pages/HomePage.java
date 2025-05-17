@@ -15,6 +15,13 @@ public class HomePage {
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
 
+    // Identificam webElementele specifice pentru aceasta pagina
+    @FindBy(xpath = "//h5")
+    List<WebElement> alertFrameWindowElement;
+
+//    @FindBy(xpath = "//p[text()='Consent']")
+//    WebElement consentElement;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         this.elementsMethods = new ElementsMethods(driver);
@@ -22,12 +29,9 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    // Identificam webElementele specifice pentru aceasta pagina
-    @FindBy(xpath = "//h5")
-    List<WebElement> alertFrameWindowElement;
-
     // Facem metode specifice pentru pagina aceasta
     public void goToDesiredMenu(String menu) {
+//        elementsMethods.clickOnElements(consentElement);
         javascriptMethods.scrollDown(400);
         elementsMethods.findElement(alertFrameWindowElement, menu);
     }

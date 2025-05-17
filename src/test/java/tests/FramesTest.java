@@ -3,16 +3,14 @@ package tests;
 import helperMethods.ElementsMethods;
 import helperMethods.FramesMethods;
 import helperMethods.JavascriptMethods;
-import pages.CommonPage;
-import pages.HomePage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.CommonPage;
+import pages.HomePage;
+import sharedData.TestBase;
 
-public class FramesTest {
-    WebDriver driver;
+public class FramesTest extends TestBase {
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
     FramesMethods framesMethods;
@@ -21,12 +19,6 @@ public class FramesTest {
 
     @Test
     public void FramesTests() {
-        //deschidem un browser de Chrome
-        driver = new ChromeDriver();
-        //accesam o pagina web
-        driver.get("https://demoqa.com/");
-        //setam browserul in modul maximize
-        driver.manage().window().maximize();
 
         elementsMethods = new ElementsMethods(driver);
         javascriptMethods = new JavascriptMethods(driver);

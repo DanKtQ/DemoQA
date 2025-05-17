@@ -2,25 +2,16 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import sharedData.TestBase;
 
 import java.util.List;
 
-public class RecursionTest {
-
-    WebDriver driver;
+public class RecursionTest extends TestBase {
 
     @Test
     public void scrollThroughTheList() throws InterruptedException {
-        //deschidem un browser de Chrome
-        driver = new ChromeDriver();
-        //accesam o pagina web
-        driver.get("https://demoqa.com/sortable");
-        //setam browserul in modul maximize
-        driver.manage().window().maximize();
 
         Actions actions = new Actions(driver);
         List<WebElement> listElement = driver.findElements(By.xpath("//div[@id='demo-tabpane-list']//div[@class='list-group-item list-group-item-action']"));

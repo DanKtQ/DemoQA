@@ -3,18 +3,15 @@ package tests;
 import helperMethods.AlertMethods;
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
-import pages.CommonPage;
-import pages.HomePage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.CommonPage;
+import pages.HomePage;
+import sharedData.TestBase;
 
-import java.time.Duration;
+public class AlertsTest extends TestBase {
 
-public class AlertsTest {
-    WebDriver driver;
     ElementsMethods elementsMethods;
     AlertMethods alertMethods;
     JavascriptMethods javascriptMethods;
@@ -23,14 +20,6 @@ public class AlertsTest {
 
     @Test
     public void accessAlertsPage() {
-        //deschidem un browser de Chrome
-        driver = new ChromeDriver();
-        //accesam o pagina web
-        driver.get("https://demoqa.com/");
-        //definim un wait implicit pentru un interval maxim de timp
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //setam browserul in modul maximize
-        driver.manage().window().maximize();
 
         elementsMethods = new ElementsMethods(driver);
         alertMethods = new AlertMethods(driver);

@@ -2,21 +2,17 @@ package tests;
 
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
+import org.junit.jupiter.api.Test;
 import pages.CommonPage;
 import pages.HomePage;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.PracticeFormPage;
+import sharedData.TestBase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PracticeFormTest {
+public class PracticeFormTest extends TestBase {
 
-    WebDriver driver;
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
     HomePage homePage;
@@ -25,13 +21,6 @@ public class PracticeFormTest {
 
     @Test
     public void practiceFormTests() {
-        //deschidem un browser de Chrome
-        driver = new ChromeDriver();
-        //accesam o pagina web
-        driver.get("https://demoqa.com/");
-        //setam browserul in modul maximize
-        driver.manage().window().maximize();
-
         elementsMethods = new ElementsMethods(driver);
         javascriptMethods = new JavascriptMethods(driver);
         homePage = new HomePage(driver);

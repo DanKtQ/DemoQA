@@ -1,28 +1,13 @@
 package pages;
 
-import helperMethods.ElementsMethods;
-import helperMethods.JavascriptMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PracticeFormPage {
-
-    WebDriver driver;
-    ElementsMethods elementsMethods;
-    JavascriptMethods javascriptMethods;
-
-    public PracticeFormPage(WebDriver driver) {
-        this.driver = driver;
-        this.elementsMethods = new ElementsMethods(driver);
-        this.javascriptMethods = new JavascriptMethods(driver);
-        //astea e partea de driver.findElement
-        PageFactory.initElements(driver, this);
-    }
+public class PracticeFormPage extends CommonPage {
 
     @FindBy(id = "firstName")
     WebElement firstNameElement;
@@ -73,6 +58,10 @@ public class PracticeFormPage {
     //identificarea dupa id functioneaza cu clasa fillMultipleValues
     @FindBy(id = "subjectsInput")
     WebElement subjectsElement;
+
+    public PracticeFormPage(WebDriver driver) {
+        super(driver);
+    }
 
 
     public void completeFirstRegion(String firstName, String lastName, String email, String address, String mobileNo) {
