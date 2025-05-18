@@ -1,4 +1,4 @@
-package theory.OOP;
+package theory.oop;
 
 public class Angajat extends Persoana {
 
@@ -18,6 +18,24 @@ public class Angajat extends Persoana {
         System.out.println("Numele firmei este: " + firma);
         System.out.println("Ani de experienta: " + experienta);
         System.out.println("Zile de concediu: " + zileConcediu);
+    }
+
+    // suprascriem metoda din parinte(polimorfism dinamic)
+    public void mananca(){
+        System.out.println("Angajatul mananca atunci cand are pauza de masa");
+    }
+
+    // polimorfism static
+    public void marire(){
+        System.out.println("Nu avem buget de mariri");
+    }
+
+    public void marire(Integer procent){
+        System.out.println("Angajatul a primit o marire de " + procent + "%");
+    }
+
+    public void marire(String grad){
+        System.out.println("Angajatul a primit gradul de " + grad);
     }
 
     public void promovare() {

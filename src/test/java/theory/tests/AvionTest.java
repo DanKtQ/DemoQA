@@ -1,6 +1,6 @@
-package theory.Tests;
+package theory.tests;
 
-import theory.ObiectConstructor.Avion;
+import theory.obiectConstructor.Avion;
 import org.junit.jupiter.api.Test;
 
 public class AvionTest {

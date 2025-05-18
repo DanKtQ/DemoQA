@@ -1,4 +1,4 @@
-package theory.Exceptions;
+package theory.exceptions;
 
 public class Exception1 {
 

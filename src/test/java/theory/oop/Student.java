@@ -1,4 +1,4 @@
-package theory.OOP;
+package theory.oop;
 
 public class Student extends Persoana {
 
@@ -18,6 +18,11 @@ public class Student extends Persoana {
         System.out.println("Facultatea este: " + facultate);
         System.out.println("Anul in care se afla studentul este: " + an);
         System.out.println("Studentul ia/nu ia bursa: " + bursa);
+    }
+
+    public void mananca(){
+        System.out.println("Studentul mananca atunci cand vrea el");
+        super.mananca();
     }
 
     public void absolvire() {

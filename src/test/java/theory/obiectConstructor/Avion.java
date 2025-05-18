@@ -1,4 +1,4 @@
-package theory.ObiectConstructor;
+package theory.obiectConstructor;
 
 public class Avion {
 
