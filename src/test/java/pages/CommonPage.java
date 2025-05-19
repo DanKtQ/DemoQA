@@ -10,13 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class CommonPage {
-    public WebDriver driver;
-    ElementsMethods elementsMethods;
-    JavascriptMethods javascriptMethods;
-    AlertMethods alertMethods;
-    FramesMethods framesMethods;
-    WindowsMethods windowsMethods;
-    Actions actions;
+   protected WebDriver driver;
+   protected ElementsMethods elementsMethods;
+   protected JavascriptMethods javascriptMethods;
+   protected AlertMethods alertMethods;
+   protected FramesMethods framesMethods;
+   protected WindowsMethods windowsMethods;
+   protected Actions actions;
 
     public CommonPage(WebDriver driver) {
         this.driver = driver;

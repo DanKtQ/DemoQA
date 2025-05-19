@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
@@ -11,7 +13,9 @@ public class TestBase {
 
     private WebDriver driver;
 
-    @BeforeEach
+    // BeforeMethod si AfterMethod se folosesc cu testng
+    // BeforeEach si AfterEach se folosesc cu junit
+    @BeforeMethod
     public void setUp() {
         //deschidem un browser de Chrome
         driver = new ChromeDriver();
@@ -23,7 +27,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();

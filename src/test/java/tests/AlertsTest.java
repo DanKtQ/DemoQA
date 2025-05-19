@@ -3,12 +3,13 @@ package tests;
 import helperMethods.AlertMethods;
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CommonPage;
 import pages.HomePage;
 import sharedData.TestBase;
+import org.testng.annotations.Test;
 
 public class AlertsTest extends TestBase {
 

@@ -1,8 +1,15 @@
 package theory.oop;
 
-public class Angajat extends Persoana {
+public class Angajat extends Persoana implements AngajatInt {
 
-    private String firma;
+    // public = codul se poate accesa de oriunde si de orice clasa
+    // private = codul se poate accesa doar din clasa unde s-a scris codul
+    // protected = codul se poate accesa doar din pachetul in care s-a scris codul, dar si de catre subclase(conceptul OOP de mostenire)
+    // default = codul se poate accesa doar din pachetul din care s-a scris codul. Intra pe default daca nu se specifica un alt
+    //           modificator de acces
+    //
+
+    protected String firma;
     private Integer experienta;
     private Integer zileConcediu;
 
@@ -64,5 +71,25 @@ public class Angajat extends Persoana {
 
     public void setZileConcediu(Integer zileConcediu) {
         this.zileConcediu = zileConcediu;
+    }
+
+    @Override
+    public void mergeLaMunca() {
+        System.out.println("Angajatul merge la munca");
+    }
+
+    @Override
+    public void primesteSalariu() {
+        System.out.println("Angajatul primeste salariu");
+    }
+
+    @Override
+    public void mergeInPauza() {
+        System.out.println("Angajatul merge in pauza");
+    }
+
+    @Override
+    public void prezintaDemisie() {
+        System.out.println("Angajatul nu pleaca din firma");
     }
 }

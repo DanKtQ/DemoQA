@@ -1,6 +1,6 @@
 package theory.oop;
 
-public class Student extends Persoana {
+public class Student extends Persoana implements StudentInt{
 
     private String facultate;
     private String an;
@@ -47,5 +47,20 @@ public class Student extends Persoana {
 
     public void setBursa(Boolean bursa) {
         this.bursa = bursa;
+    }
+
+    @Override
+    public void mergeLaCurs() {
+        System.out.println("Studentul merge la curs");
+    }
+
+    @Override
+    public void sustineExamene() {
+        System.out.println("Studentul are sesiune");
+    }
+
+    @Override
+    public void mergeLaCafea() {
+        System.out.println("Studentul este silitor, nu ca Alex");
     }
 }

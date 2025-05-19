@@ -2,7 +2,8 @@ package tests;
 
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CommonPage;
