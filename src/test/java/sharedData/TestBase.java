@@ -1,5 +1,7 @@
 package sharedData;
 
+import configFile.ConfigFile;
+import configFile.configNode.ConfigurationNode;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -17,10 +19,13 @@ public class TestBase {
     // BeforeEach si AfterEach se folosesc cu junit
     @BeforeMethod
     public void setUp() {
+
+        ConfigurationNode configurationNode = ConfigFile.createConfigNode(ConfigurationNode.class);
+
         //deschidem un browser de Chrome
         driver = new ChromeDriver();
         //accesam o pagina web
-        driver.get("https://demoqa.com/");
+        driver.get(configurationNode.driverConfigNode.url);
         //setam browserul in modul maximize
         driver.manage().window().maximize();
         //definim un wait implicit pentru un interval maxim de timp
