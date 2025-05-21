@@ -4,7 +4,8 @@
     <test name ="SmokeSuite">
         <classes>
             <class name = "tests.AlertsTest"/>
-            <class name = "tests.FramesTest"/>
+            <class name = "tests.PracticeFormTest"/>
+            <class name = "tests.WebTableTest"/>
         </classes>
     </test>
 </suite>
