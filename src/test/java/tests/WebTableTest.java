@@ -2,7 +2,7 @@ package tests;
 
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
-//import org.junit.jupiter.api.Test;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,6 @@ import sharedData.TestBase;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebTableTest extends TestBase {
     ElementsMethods elementsMethods;
@@ -67,17 +66,17 @@ public class WebTableTest extends TestBase {
         elementsMethods.clickOnElements(submitButton);
 
         WebElement firstNameColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][1]"));
-        assertEquals("Dan", firstNameColumn.getText());
+        Assert.assertEquals("Dan", firstNameColumn.getText());
         WebElement lastNameColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][2]"));
-        assertEquals("Baicoianu", lastNameColumn.getText());
+        Assert.assertEquals("Baicoianu", lastNameColumn.getText());
         WebElement ageColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][3]"));
-        assertEquals("35", ageColumn.getText());
+        Assert.assertEquals("35", ageColumn.getText());
         WebElement userEmailColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][4]"));
-        assertEquals("dan@testtest.com", userEmailColumn.getText());
+        Assert.assertEquals("dan@testtest.com", userEmailColumn.getText());
         WebElement salaryColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][5]"));
-        assertEquals("1000", salaryColumn.getText());
+        Assert.assertEquals("1000", salaryColumn.getText());
         WebElement departmentColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][6]"));
-        assertEquals("Engineering", departmentColumn.getText());
+        Assert.assertEquals("Engineering", departmentColumn.getText());
 
 
     }
