@@ -20,6 +20,8 @@ public class FramesTest extends TestBase {
     @Test
     public void FramesTests() {
 
+        System.out.println("Acesta este testul de Frames");
+
         elementsMethods = new ElementsMethods(getDriver());
         javascriptMethods = new JavascriptMethods(getDriver());
         framesMethods = new FramesMethods(getDriver());

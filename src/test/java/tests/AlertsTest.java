@@ -21,6 +21,8 @@ public class AlertsTest extends TestBase {
     @Test
     public void accessAlertsTests() {
 
+        System.out.println("Acesta este testul de Alerts");
+
         elementsMethods = new ElementsMethods(getDriver());
         alertMethods = new AlertMethods(getDriver());
         javascriptMethods = new JavascriptMethods(getDriver());
