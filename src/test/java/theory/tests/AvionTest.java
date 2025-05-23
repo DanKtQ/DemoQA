@@ -1,7 +1,7 @@
 package theory.tests;
 
+import org.testng.annotations.Test;
 import theory.obiectConstructor.Avion;
-import org.junit.jupiter.api.Test;
 
 public class AvionTest {
 
