@@ -1,5 +1,6 @@
 package pages;
 
+import objectData.PracticeFormObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,6 +52,9 @@ public class PracticeFormPage extends CommonPage {
     @FindBy(xpath = "//label[@for='hobbies-checkbox-3']")
     private WebElement musicHobbyElement;
 
+    @FindBy(id = "submit")
+    private WebElement submitElement;
+
 // identificarea dupa xpath functioneaza cu clasa fillWithActions
 //    @FindBy(xpath = "//div[@id='subjectsContainer']")
 //  private  WebElement subjectsElement;
@@ -64,16 +68,16 @@ public class PracticeFormPage extends CommonPage {
     }
 
 
-    public void completeFirstRegion(String firstName, String lastName, String email, String address, String mobileNo) {
-        elementsMethods.fillElement(firstNameElement, firstName);
-        elementsMethods.fillElement(lastNameElement, lastName);
-        elementsMethods.fillElement(userEmailElement, email);
-        elementsMethods.fillElement(addressElement, address);
-        elementsMethods.fillElement(mobileNumberElement, mobileNo);
+    public void completeFirstRegion(PracticeFormObject practiceFormObject) {
+        elementsMethods.fillElement(firstNameElement, practiceFormObject.getFirstName());
+        elementsMethods.fillElement(lastNameElement, practiceFormObject.getLastName());
+        elementsMethods.fillElement(userEmailElement, practiceFormObject.getEmail());
+        elementsMethods.fillElement(addressElement, practiceFormObject.getAddress());
+        elementsMethods.fillElement(mobileNumberElement, practiceFormObject.getMobileNo());
     }
 
-    public void completeGender(String gender) {
-        switch (gender) {
+    public void completeGender(PracticeFormObject practiceFormObject) {
+        switch (practiceFormObject.getGender()) {
             case "Male":
                 elementsMethods.clickOnElements(maleGenderElement);
                 break;
@@ -93,18 +97,33 @@ public class PracticeFormPage extends CommonPage {
     }
 
 
-    public void completeSubjectWithList(List<String> list) {
+    public void completeSubjectWithList(PracticeFormObject practiceFormObject) {
         elementsMethods.clickOnElements(subjectsElement);
         //foloseste element.sendKeys, astfel ca functioneaza atunci cand identificam webElementul dupa id
-        elementsMethods.fillMultipleValues(subjectsElement, list);
+        elementsMethods.fillMultipleValues(subjectsElement, practiceFormObject.getSubjects());
     }
 
-    public void completeHobbies(List<String> hobbies) {
+    public void completeHobbies(PracticeFormObject practiceFormObject) {
         List<WebElement> hobbiesElement = new ArrayList<>();
         hobbiesElement.add(sportHobbyElement);
         hobbiesElement.add(musicHobbyElement);
         hobbiesElement.add(readingHobbyElement);
-        elementsMethods.checkMultipleElementsByListOfValues(hobbiesElement, hobbies);
+        elementsMethods.checkMultipleElementsByListOfValues(hobbiesElement, practiceFormObject.getHobbies());
+    }
+
+    public void completeState(PracticeFormObject practiceFormObject){
+//        javascriptMethods.forceClick(stateElement);
+        elementsMethods.clickOnElements(stateElement);
+        elementsMethods.waitVisibilityElement(stateElement);
+        elementsMethods.fillWithActions(stateElement, practiceFormObject.getState());
+//        javascriptMethods.forceClick(cityElement);
+        elementsMethods.clickOnElements(cityElement);
+        elementsMethods.waitVisibilityElement(cityElement);
+        elementsMethods.fillWithActions(cityElement, practiceFormObject.getCity());
+    }
+
+    public void submit() {
+        submitElement.submit();
     }
 
 }
