@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import sharedData.TestBase;
+import sharedData.Hooks;
 
 import java.util.List;
 
-public class RecursionTest extends TestBase {
+public class RecursionTest extends Hooks {
 
     @Test
     public void scrollThroughTheList() throws InterruptedException {

@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CommonPage;
 import pages.HomePage;
-import sharedData.TestBase;
+import sharedData.Hooks;
 import org.testng.annotations.Test;
 
-public class FramesTest extends TestBase {
+public class FramesTest extends Hooks {
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
     FramesMethods framesMethods;

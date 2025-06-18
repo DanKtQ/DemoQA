@@ -8,9 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CommonPage;
 import pages.HomePage;
-import sharedData.TestBase;
+import sharedData.Hooks;
 
-public class WindowsTest extends TestBase {
+public class WindowsTest extends Hooks {
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
     WindowsMethods windowsMethods;

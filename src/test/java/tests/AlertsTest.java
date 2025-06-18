@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CommonPage;
 import pages.HomePage;
-import sharedData.TestBase;
+import sharedData.Hooks;
 import org.testng.annotations.Test;
 
-public class AlertsTest extends TestBase {
+public class AlertsTest extends Hooks {
 
     ElementsMethods elementsMethods;
     AlertMethods alertMethods;

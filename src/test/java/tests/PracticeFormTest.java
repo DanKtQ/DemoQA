@@ -8,9 +8,9 @@ import pages.CommonPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
 import propertyUtility.PropertyUtility;
-import sharedData.TestBase;
+import sharedData.Hooks;
 
-public class PracticeFormTest extends TestBase {
+public class PracticeFormTest extends Hooks {
 
     ElementsMethods elementsMethods;
     JavascriptMethods javascriptMethods;
