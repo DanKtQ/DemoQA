@@ -5,7 +5,7 @@ name: Regression Pipeline
 
 on:
   schedule:
-    - cron: '00 23 * * 1-5'
+    - cron: '20 12 * * 1-5'
   workflow_dispatch:
     inputs:
       suite:
@@ -34,7 +34,7 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
       - name: Run automation suite
-        run: mvn clean install -DciCd=true -Dbrowser=${{ github.event.inputs.browser }} -DsuiteXmlFile=suites/${{ github.event.inputs.suite }} -PCustomSuite
+        run: mvn clean install -DciCd=true -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=suites/${{ github.event.inputs.suite || 'SmokeSuite.xml' }} -PCustomSuite
       - name: Publish suite results
         if: always()
         uses: actions/upload-artifact@v4
