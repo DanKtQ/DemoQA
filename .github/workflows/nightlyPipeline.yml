@@ -5,7 +5,7 @@ name: Nightly Pipeline
 
 on:
   schedule:
-    - cron: '30 9 * * 1-5'
+    - cron: '50 9 * * 1-5'
   workflow_dispatch:
     inputs:
       suite:
@@ -34,7 +34,7 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
       - name: Run automation suite
-        run: mvn clean install -DciCd=true -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=suites/${{ github.event.inputs.suite || 'SmokeSuite.xml' }} -PCustomSuite
+        run: mvn clean install -DciCd=true -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=suites/${{ github.event.inputs.suite || 'SmokeSuite' }} -PCustomSuite
 
       - name: Publish suite results
         if: always()
