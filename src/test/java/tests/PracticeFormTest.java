@@ -1,5 +1,7 @@
 package tests;
 
+import extentUtility.ExtentUtility;
+import extentUtility.ReportStep;
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
 import objectData.PracticeFormObject;
@@ -31,16 +33,24 @@ public class PracticeFormTest extends Hooks {
         practiceFormPage = new PracticeFormPage(getDriver());
 
         homePage.goToDesiredMenu("Forms");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters Forms menu");
         commonPage.goToDesiredSubMenu("Practice Form");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters Practice Form submenu");
 
         practiceFormPage.completeFirstRegion(practiceFormObject);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes First Region");
         practiceFormPage.completeGender(practiceFormObject);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes Gender");
 
         practiceFormPage.completeSubjectWithList(practiceFormObject);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes subjects ");
 
         practiceFormPage.completeHobbies(practiceFormObject);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes hobbies");
 
         practiceFormPage.completeState(practiceFormObject);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes state");
         practiceFormPage.submit();
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user presses submit button");
     }
 }

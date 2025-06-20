@@ -1,5 +1,7 @@
 package tests;
 
+import extentUtility.ExtentUtility;
+import extentUtility.ReportStep;
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
 import org.testng.Assert;
@@ -28,13 +30,16 @@ public class WebTableTest extends Hooks {
         commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Elements");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters Elements menu");
         commonPage.goToDesiredSubMenu("Web Tables");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters Web Tables submenu");
 
         List<WebElement> tableElements = getDriver().findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
         int actualTableSize = tableElements.size();
 
         WebElement addNewRecordButton = getDriver().findElement((By.id("addNewRecordButton")));
         elementsMethods.clickOnElements(addNewRecordButton);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user adds new record");
 
         //declarare valori form
         String firstNameValue = "Dan";
@@ -46,24 +51,31 @@ public class WebTableTest extends Hooks {
 
         WebElement firstNameField = getDriver().findElement((By.id("firstName")));
         elementsMethods.fillElement(firstNameField, firstNameValue);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user fills firstName");
 
         WebElement lastNameField = getDriver().findElement((By.id("lastName")));
         elementsMethods.fillElement(lastNameField, lastNameValue);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user fills lastName");
 
         WebElement emailField = getDriver().findElement((By.id("userEmail")));
         elementsMethods.fillElement(emailField, emailValue);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user fills email");
 
         WebElement ageField = getDriver().findElement((By.id("age")));
         elementsMethods.fillElement(ageField, ageValue);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user fills age");
 
         WebElement salaryField = getDriver().findElement((By.id("salary")));
         elementsMethods.fillElement(salaryField, salaryValue);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user fills salary");
 
         WebElement departmentField = getDriver().findElement((By.id("department")));
         elementsMethods.fillElement(departmentField, departmentValue);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user fills department");
 
         WebElement submitButton = getDriver().findElement((By.id("submit")));
         elementsMethods.clickOnElements(submitButton);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user presses submit button");
 
         WebElement firstNameColumn = getDriver().findElement(By.xpath("//span[@id='edit-record-4']/ancestor::div[@class='rt-tr-group']//div[@class='rt-td'][1]"));
         Assert.assertEquals("Dan", firstNameColumn.getText());

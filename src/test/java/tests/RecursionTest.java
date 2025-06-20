@@ -1,5 +1,7 @@
 package tests;
 
+import extentUtility.ExtentUtility;
+import extentUtility.ReportStep;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -30,5 +32,6 @@ public class RecursionTest extends Hooks {
                 e.printStackTrace();
             }
         }
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters Interactions menu");
     }
 }

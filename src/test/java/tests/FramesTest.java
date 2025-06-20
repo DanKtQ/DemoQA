@@ -1,5 +1,7 @@
 package tests;
 
+import extentUtility.ExtentUtility;
+import extentUtility.ReportStep;
 import helperMethods.ElementsMethods;
 import helperMethods.FramesMethods;
 import helperMethods.JavascriptMethods;
@@ -29,12 +31,15 @@ public class FramesTest extends Hooks {
         commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Alerts, Frame & Windows");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters on Alerts, Frame & Windows menu");
         commonPage.goToDesiredSubMenu("Frames");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters on Frames submenu");
 
         WebElement frame1Element = getDriver().findElement((By.id("frame1")));
         framesMethods.switchToFrame(frame1Element);
         WebElement sampleHeadingFrameElement = getDriver().findElement(By.id("sampleHeading"));
         framesMethods.displayContentOfFrame(sampleHeadingFrameElement);
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user interacts with the first iframe");
 
         //ne ducem cu focusul inapoi pe pagina principala
         framesMethods.switchToMainContent();

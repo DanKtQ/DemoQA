@@ -2,8 +2,6 @@ package sharedData;
 
 import logger.LoggerUtility;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import sharedData.browser.BrowserFactory;
 
 public class TestBase {
@@ -14,7 +12,7 @@ public class TestBase {
     // BeforeEach si AfterEach se folosesc cu junit
     public void setUp() {
         driver = new BrowserFactory().getBrowserFactory();
-        LoggerUtility.infoLog("The browser was open with success");
+        LoggerUtility.infoLog("The browser was opened with success");
     }
 
     public void tearDown() {

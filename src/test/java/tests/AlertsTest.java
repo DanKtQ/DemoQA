@@ -1,5 +1,7 @@
 package tests;
 
+import extentUtility.ExtentUtility;
+import extentUtility.ReportStep;
 import helperMethods.AlertMethods;
 import helperMethods.ElementsMethods;
 import helperMethods.JavascriptMethods;
@@ -30,12 +32,15 @@ public class AlertsTest extends Hooks {
         commonPage = new CommonPage(getDriver());
 
         homePage.goToDesiredMenu("Alerts, Frame & Windows");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters on Alerts, Frame & Windows menu");
         commonPage.goToDesiredSubMenu("Alerts");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user enters on Alerts submenu");
 
         WebElement alertOkElement = getDriver().findElement(By.id("alertButton"));
         elementsMethods.clickOnElements(alertOkElement);
         //ne mutam cu focusul pe alerta si dam ok
         alertMethods.interactOKWithAlerts();
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user interacts with OK Alert");
 
         WebElement alertDelayElement = getDriver().findElement(By.id("timerAlertButton"));
         elementsMethods.clickOnElements(alertDelayElement);
@@ -43,15 +48,18 @@ public class AlertsTest extends Hooks {
         alertMethods.explicitAlertWait();
         //ne mutam cu focusul pe alerta si dam ok
         alertMethods.interactOKWithAlerts();
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user interacts with Alert Delay");
 
         WebElement alertConfirmationElement = getDriver().findElement(By.id("confirmButton"));
         elementsMethods.clickOnElements(alertConfirmationElement);
         //ne mutam cu focusul pe alerta si dam cancel
         alertMethods.interactDismissWithAlerts();
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user interacts with Alert Confirmation");
 
         WebElement alertPromptElement = getDriver().findElement(By.id("promtButton"));
         elementsMethods.clickOnElements(alertPromptElement);
         //ne mutam cu focusul pe alerta, completam campul si dam OK
         alertMethods.interactAndFillWithAlert("Automation");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user interacts with Alert Prompt");
     }
 }
