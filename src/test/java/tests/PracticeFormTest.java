@@ -48,8 +48,6 @@ public class PracticeFormTest extends Hooks {
         practiceFormPage.completeHobbies(practiceFormObject);
         ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes hobbies");
 
-        javascriptMethods.scroll(0, 400);
-
         practiceFormPage.completeState(practiceFormObject);
         ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user completes state");
         practiceFormPage.submit();

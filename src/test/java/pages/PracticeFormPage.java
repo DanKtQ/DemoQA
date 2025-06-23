@@ -104,6 +104,7 @@ public class PracticeFormPage extends CommonPage {
     }
 
     public void completeHobbies(PracticeFormObject practiceFormObject) {
+        javascriptMethods.scroll(0, 400);
         List<WebElement> hobbiesElement = new ArrayList<>();
         hobbiesElement.add(sportHobbyElement);
         hobbiesElement.add(musicHobbyElement);
@@ -111,7 +112,7 @@ public class PracticeFormPage extends CommonPage {
         elementsMethods.checkMultipleElementsByListOfValues(hobbiesElement, practiceFormObject.getHobbies());
     }
 
-    public void completeState(PracticeFormObject practiceFormObject){
+    public void completeState(PracticeFormObject practiceFormObject) {
 //        javascriptMethods.forceClick(stateElement);
         elementsMethods.clickOnElements(stateElement);
         elementsMethods.waitVisibilityElement(stateElement);

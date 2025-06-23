@@ -1,5 +1,6 @@
 package helperMethods;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +24,8 @@ public class ElementsMethods {
     }
 
     public void clickOnElements(WebElement element) {
-        element.click();
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
     }
 
     public void fillElement(WebElement element, String value) {

@@ -12,6 +12,7 @@ public class TestBase {
     // BeforeEach si AfterEach se folosesc cu junit
     public void setUp() {
         driver = new BrowserFactory().getBrowserFactory();
+        driver.manage().window().maximize();
         LoggerUtility.infoLog("The browser was opened with success");
     }
 
