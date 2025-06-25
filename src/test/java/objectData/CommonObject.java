@@ -11,4 +11,9 @@ public class CommonObject {
         String[] valueSplit = value.split(",");
         return Arrays.stream(valueSplit).collect(Collectors.toList());
     }
+
+    public String[] getDateAsArrayFromString(String date, String delimiter) {
+
+        return date.split(delimiter);
+    }
 }

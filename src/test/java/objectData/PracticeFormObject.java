@@ -1,7 +1,10 @@
 package objectData;
 
+import java.time.Month;
+import java.time.format.TextStyle;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class PracticeFormObject extends CommonObject {
 
@@ -10,6 +13,7 @@ public class PracticeFormObject extends CommonObject {
     private String email;
     private String address;
     private String mobileNo;
+    private String[] dateOfBirth;
     private String gender;
     private List<String> subjects;
     private List<String> hobbies;
@@ -39,6 +43,9 @@ public class PracticeFormObject extends CommonObject {
                 case "mobileNo":
                     setMobileNo(testData.get(key));
                     break;
+                case "dateOfBirth":
+                    setDateOfBirth(getDateAsArrayFromString(testData.get(key), "/"));
+                    break;
                 case "gender":
                     setGender(testData.get(key));
                     break;
@@ -56,6 +63,18 @@ public class PracticeFormObject extends CommonObject {
                     break;
             }
         }
+    }
+
+    public String getFormattedDateOfBirth() {
+        String day = dateOfBirth[0];
+        String month = convertMonthNumberToName(dateOfBirth[1]); // e.g. "08" → "August"
+        String year = dateOfBirth[2];
+        return day + " " + month + "," + year;
+    }
+
+    private String convertMonthNumberToName(String monthNumber) {
+        int monthInt = Integer.parseInt(monthNumber);
+        return Month.of(monthInt).getDisplayName(TextStyle.FULL, Locale.ENGLISH);
     }
 
     public String getFirstName() {
@@ -136,5 +155,13 @@ public class PracticeFormObject extends CommonObject {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String[] getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String[] dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }
