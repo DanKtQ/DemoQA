@@ -184,11 +184,12 @@ public class PracticeFormPage extends CommonPage {
         LoggerUtility.infoLog("The user clicks on Submit button");
     }
 
-    public void verifyValue(WebElement element, String expectedValue, String fieldName) {
+    public void verifyValue(By locator, String expectedValue, String fieldName) {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("iframe, .ad, [id*=ad]")));
 //        wait.until(ExpectedConditions.visibilityOf(element));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         wait.until(ExpectedConditions.textToBePresentInElement(element, expectedValue));
         String actualValue = element.getText().trim();
 
@@ -208,8 +209,9 @@ public class PracticeFormPage extends CommonPage {
         );
     }
 
-    public WebElement getTableStudentNameOutput() {
-        return tableStudentNameOutput;
+    public By getTableStudentNameOutput() {
+//        return tableStudentNameOutput;
+        return By.xpath("//table//tr[td[text()='Student Name']]/td[2]");
     }
 
     public WebElement getTableEmailOutput() {
