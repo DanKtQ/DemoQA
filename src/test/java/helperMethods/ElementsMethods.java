@@ -104,6 +104,12 @@ public class ElementsMethods {
     }
 
     public void prepareForVerification() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("example-modal-sizes-title-lg")));
+        WebElement modal = driver.findElement(By.className("modal-content"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", modal);
+
         // Remove known ad types
         ((JavascriptExecutor) driver).executeScript(
                 "document.querySelectorAll('iframe, .adsbygoogle, .popup-ad, .ad-banner, #ad-container, .sticky-ad, iframe[src*=\"ads\"], [id^=\"ad\"], [id$=\"ad\"], [class^=\"ad\"], [class$=\"ad\"]').forEach(e => e.style.display='none');"
