@@ -165,13 +165,11 @@ public class PracticeFormPage extends CommonPage {
     }
 
     public void completeState(PracticeFormObject practiceFormObject) {
-//        javascriptMethods.forceClick(stateElement);
         javascriptMethods.scroll(0, 400);
         elementsMethods.clickOnElements(stateElement);
         LoggerUtility.infoLog("The user clicks on State element");
         elementsMethods.waitVisibilityElement(stateElement);
         elementsMethods.fillWithActions(stateElement, practiceFormObject.getState());
-//        javascriptMethods.forceClick(cityElement);
         elementsMethods.clickOnElements(cityElement);
         LoggerUtility.infoLog("The user clicks on City element");
         elementsMethods.waitVisibilityElement(cityElement);
@@ -188,7 +186,6 @@ public class PracticeFormPage extends CommonPage {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("iframe, .ad, [id*=ad]")));
-//        wait.until(ExpectedConditions.visibilityOf(element));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         wait.until(ExpectedConditions.textToBePresentInElement(element, expectedValue));
         String actualValue = element.getText().trim();

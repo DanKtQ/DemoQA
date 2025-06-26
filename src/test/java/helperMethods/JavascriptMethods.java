@@ -2,7 +2,6 @@ package helperMethods;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class JavascriptMethods {
 
@@ -30,9 +29,4 @@ public class JavascriptMethods {
         scroll(x, 0);
     }
 
-    public void forceClick(WebElement element) {
-        // Cand nu poti face click pe element (eg o reclama se suprapune) se poate folosi "ciocanul"
-        // JavascriptExecutor iti permite sa faci actiuni extra
-        javascriptExecutor.executeScript("arguments[0].click();", element);
-    }
 }
