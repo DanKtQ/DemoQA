@@ -186,7 +186,8 @@ public class PracticeFormPage extends CommonPage {
 
     public void verifyValue(WebElement element, String expectedValue, String fieldName) {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.textToBePresentInElement(element, expectedValue));
         String actualValue = element.getText().trim();
 
