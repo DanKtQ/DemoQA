@@ -21,7 +21,7 @@ public class PracticeFormTest extends Hooks {
     PracticeFormPage practiceFormPage;
 
     @Test
-    public void practiceFormTests() throws InterruptedException {
+    public void practiceFormTests() {
 
         PropertyUtility propertyUtility = new PropertyUtility("PracticeFormTest");
         PracticeFormObject practiceFormObject = new PracticeFormObject(propertyUtility.getData());
@@ -60,7 +60,7 @@ public class PracticeFormTest extends Hooks {
         practiceFormPage.submit();
         ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user presses submit button");
 
-        Thread.sleep(5000);
+        elementsMethods.prepareForVerification();
 
         //Check the values
         practiceFormPage.verifyValue(practiceFormPage.getTableStudentNameOutput(), practiceFormObject.getFirstName() + " " +

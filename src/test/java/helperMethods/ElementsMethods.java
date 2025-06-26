@@ -103,4 +103,11 @@ public class ElementsMethods {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void prepareForVerification() {
+        // Remove known ad types
+        ((JavascriptExecutor) driver).executeScript(
+                "document.querySelectorAll('iframe, .adsbygoogle, .popup-ad, .ad-banner, #ad-container, .sticky-ad, iframe[src*=\"ads\"], [id^=\"ad\"], [id$=\"ad\"], [class^=\"ad\"], [class$=\"ad\"]').forEach(e => e.style.display='none');"
+        );
+    }
+
 }
