@@ -5,7 +5,7 @@ name: Regression Pipeline
 
 on:
   schedule:
-    - cron: '30 19 * * 1-5'
+    - cron: '20 20 * * 1-5'
   workflow_dispatch:
     inputs:
       suite:

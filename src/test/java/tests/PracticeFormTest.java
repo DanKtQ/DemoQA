@@ -63,26 +63,26 @@ public class PracticeFormTest extends Hooks {
         elementsMethods.prepareForVerification();
 
         //Check the values
-        practiceFormPage.verifyValue(practiceFormPage.getTableStudentNameOutput(), practiceFormObject.getFirstName() + " " +
+        practiceFormPage.verifyValue(practiceFormPage.getTableStudentNameLocator(), practiceFormObject.getFirstName() + " " +
                 practiceFormObject.getLastName(), "Full Name");
         ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Student Name");
-//        practiceFormPage.verifyValue(practiceFormPage.getTableEmailOutput(), practiceFormObject.getEmail(), "Email");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Email");
-//        practiceFormPage.verifyValue(practiceFormPage.getTableGenderOutput(), practiceFormObject.getGender(), "Gender");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Gender");
-//        practiceFormPage.verifyValue(practiceFormPage.getTableMobileOutput(), practiceFormObject.getMobileNo(), "Mobile Number");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Mobile Number");
-//        practiceFormPage.verifyValue(practiceFormPage.getTableBirthOutput(), practiceFormObject.getFormattedDateOfBirth(), "Date of Birth");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Date of Birth");
-//        practiceFormPage.verifyListField(practiceFormPage.getTableSubjectsOutput().getText(), practiceFormObject.getSubjects(), "Subjects");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Subjects");
-//        practiceFormPage.verifyListField(practiceFormPage.getTableHobbiesOutput().getText(), practiceFormObject.getHobbies(), "Hobbies");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Hobbies");
-//        practiceFormPage.verifyValue(practiceFormPage.getTableAddressOutput(), practiceFormObject.getAddress(), "Address");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Address");
-//        practiceFormPage.verifyValue(practiceFormPage.getTableStateCityOutput(), practiceFormObject.getState() + " " +
-//                practiceFormObject.getCity(), "State and City");
-//        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the State and City");
+        practiceFormPage.verifyValue(practiceFormPage.getTableEmailLocator(), practiceFormObject.getEmail(), "Email");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Email");
+        practiceFormPage.verifyValue(practiceFormPage.getTableGenderLocator(), practiceFormObject.getGender(), "Gender");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Gender");
+        practiceFormPage.verifyValue(practiceFormPage.getTableMobileLocator(), practiceFormObject.getMobileNo(), "Mobile Number");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Mobile Number");
+        practiceFormPage.verifyValue(practiceFormPage.getTableBirthLocator(), practiceFormObject.getFormattedDateOfBirth(), "Date of Birth");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Date of Birth");
+        practiceFormPage.verifyListField(practiceFormPage.getFieldText(practiceFormPage.getTableSubjectsLocator()),practiceFormObject.getSubjects(),"Subjects");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Subjects");
+        practiceFormPage.verifyListField(practiceFormPage.getFieldText(practiceFormPage.getTableHobbiesLocator()),practiceFormObject.getHobbies(), "Hobbies");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Hobbies");
+        practiceFormPage.verifyValue(practiceFormPage.getTableAddressLocator(), practiceFormObject.getAddress(), "Address");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the Address");
+        practiceFormPage.verifyValue(practiceFormPage.getTableStateCityLocator(), practiceFormObject.getState() + " " +
+                practiceFormObject.getCity(), "State and City");
+        ExtentUtility.attachLog(ReportStep.PASS_STEP, "The user verifies OK the State and City");
 
     }
 }

@@ -209,44 +209,44 @@ public class PracticeFormPage extends CommonPage {
         );
     }
 
-    public By getTableStudentNameOutput() {
-//        return tableStudentNameOutput;
+    public String getFieldText(By locator) {
+        return driver.findElement(locator).getText().trim();
+    }
+
+    public By getTableStudentNameLocator() {
         return By.xpath("//table//tr[td[text()='Student Name']]/td[2]");
     }
 
-    public WebElement getTableEmailOutput() {
-        return tableEmailOutput;
+    public By getTableEmailLocator() {
+        return By.xpath("//table//tr[td[text()='Student Email']]/td[2]");
     }
 
-    public WebElement getTableGenderOutput() {
-        return tableGenderOutput;
+    public By getTableGenderLocator() {
+        return By.xpath("//table//tr[td[text()='Gender']]/td[2]");
     }
 
-    public WebElement getTableMobileOutput() {
-        return tableMobileOutput;
+    public By getTableMobileLocator() {
+        return By.xpath("//table//tr[td[text()='Mobile']]/td[2]");
     }
 
-    public WebElement getTableBirthOutput() {
-        return tableBirthOutput;
+    public By getTableBirthLocator() {
+        return By.xpath("//table//tr[td[text()='Date of Birth']]/td[2]");
     }
 
-    public WebElement getTableSubjectsOutput() {
-        return tableSubjectsOutput;
+    public By getTableSubjectsLocator() {
+        return By.xpath("//table//tr[td[text()='Subjects']]/td[2]");
     }
 
-    public WebElement getTableHobbiesOutput() {
-        return tableHobbiesOutput;
+    public By getTableHobbiesLocator() {
+        return By.xpath("//table//tr[td[text()='Hobbies']]/td[2]");
     }
 
-    public WebElement getTablePictureOutput() {
-        return tablePictureOutput;
+    public By getTableAddressLocator() {
+        return By.xpath("//table//tr[td[text()='Address']]/td[2]");
     }
 
-    public WebElement getTableAddressOutput() {
-        return tableAddressOutput;
+    public By getTableStateCityLocator() {
+        return By.xpath("//table//tr[td[text()='State and City']]/td[2]");
     }
 
-    public WebElement getTableStateCityOutput() {
-        return tableStateCityOutput;
-    }
 }
